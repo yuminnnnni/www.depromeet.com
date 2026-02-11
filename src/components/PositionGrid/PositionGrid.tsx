@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { css } from '@emotion/react';
 
-import useIsApplyTime from '~/hooks/useIsApplyTime';
-
 import { PositionCard } from './PositionCard';
 
 /** 순서: Design, Android, iOS, Server, Web */
@@ -16,7 +14,6 @@ const APPLY_URLS = [
 
 export const PositionGrid = () => {
   const [isTabletOrSmaller, setIsTabletOrSmaller] = useState(false);
-  const isApplyTime = useIsApplyTime();
 
   useEffect(() => {
     const checkSize = () => {
@@ -100,11 +97,11 @@ export const PositionGrid = () => {
         <>
           <section css={sectionStyles}>
             <div css={mobileContainerStyles}>
-              <PositionCard {...positions[0]} applyUrl={isApplyTime ? APPLY_URLS[0] : ''} />
-              <PositionCard {...positions[1]} applyUrl={isApplyTime ? APPLY_URLS[1] : ''} />
-              <PositionCard {...positions[2]} applyUrl={isApplyTime ? APPLY_URLS[2] : ''} />
-              <PositionCard {...positions[3]} applyUrl={isApplyTime ? APPLY_URLS[3] : ''} />
-              <PositionCard {...positions[4]} applyUrl={isApplyTime ? APPLY_URLS[4] : ''} />
+              <PositionCard {...positions[0]} applyUrl={APPLY_URLS[0]} />
+              <PositionCard {...positions[1]} applyUrl={APPLY_URLS[1]} />
+              <PositionCard {...positions[2]} applyUrl={APPLY_URLS[2]} />
+              <PositionCard {...positions[3]} applyUrl={APPLY_URLS[3]} />
+              <PositionCard {...positions[4]} applyUrl={APPLY_URLS[4]} />
             </div>
           </section>
         </>
@@ -113,11 +110,11 @@ export const PositionGrid = () => {
           <section css={sectionStyles}>
             <div css={containerStyles}>
               <div css={gridStyles}>
-                <PositionCard {...positions[0]} applyUrl={isApplyTime ? APPLY_URLS[0] : ''} />
-                <PositionCard {...positions[1]} applyUrl={isApplyTime ? APPLY_URLS[1] : ''} />
-                <PositionCard {...positions[2]} applyUrl={isApplyTime ? APPLY_URLS[2] : ''} />
-                <PositionCard {...positions[3]} applyUrl={isApplyTime ? APPLY_URLS[3] : ''} />
-                <PositionCard {...positions[4]} applyUrl={isApplyTime ? APPLY_URLS[4] : ''} />
+                <PositionCard {...positions[0]} applyUrl={APPLY_URLS[0]} />
+                <PositionCard {...positions[1]} applyUrl={APPLY_URLS[1]} />
+                <PositionCard {...positions[2]} applyUrl={APPLY_URLS[2]} />
+                <PositionCard {...positions[3]} applyUrl={APPLY_URLS[3]} />
+                <PositionCard {...positions[4]} applyUrl={APPLY_URLS[4]} />
               </div>
             </div>
           </section>
